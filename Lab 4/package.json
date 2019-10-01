@@ -1,0 +1,15 @@
+{
+  "name": "cs-546-lab-3",
+  "version": "1.0.0",
+  "description": "CS-546 Lab 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "author": "Zubair Shaikh 10444383",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.3.2"
+  }
+}
