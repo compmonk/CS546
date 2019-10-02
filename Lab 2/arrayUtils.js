@@ -8,7 +8,7 @@ const head = function(array) {
   if (array.length > 1) {
     return array[0];
   }
-}
+};
 
 const last = function(array) {
   if (!Array.isArray(array)) {
@@ -20,7 +20,7 @@ const last = function(array) {
   if (array.length > 1) {
     return array[array.length - 1];
   }
-}
+};
 
 const remove = function(array, index) {
   if (!Array.isArray(array)) {
@@ -33,12 +33,13 @@ const remove = function(array, index) {
     throw "Index is out of bounds";
   }
   let result = [];
-  for (var i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (i !== index) {
         result.push(array[i]);
     }
   }
-}
+  return result;
+};
 
 const range = function(end, value) {
   if (end === undefined) {
@@ -53,7 +54,7 @@ const range = function(end, value) {
 
   let result = [];
 
-  for (var i = 0; i < end; i++) {
+  for (let i = 0; i < end; i++) {
     if (value !== undefined) {
       result[i] = value;
     }
@@ -62,7 +63,7 @@ const range = function(end, value) {
     }
   }
   return result;
-}
+};
 
 const countElements = function(array) {
   if (!Array.isArray(array)) {
@@ -71,8 +72,8 @@ const countElements = function(array) {
   if (array === undefined) {
     throw "Array is undefined";
   }
-  let result = {}
-  for (var i = 0; i < array.length; i++) {
+  let result = {};
+  for (let i = 0; i < array.length; i++) {
     if (result[array[i]] !== undefined) {
       result[array[i]] += 1;
     }
@@ -81,7 +82,7 @@ const countElements = function(array) {
     }
   }
   return result;
-}
+};
 
 const isEqual = function(arrayOne, arrayTwo) {
   if (!Array.isArray(arrayOne)) {
@@ -99,13 +100,13 @@ const isEqual = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
-  for (var i = 0; i < arrayOne.length; i++) {
+  for (let i = 0; i < arrayOne.length; i++) {
     if (arrayOne[i] !== arrayTwo[i]) {
       return false;
     }
   }
   return true;
-}
+};
 
 module.exports = {
   head,
@@ -114,4 +115,4 @@ module.exports = {
   range,
   countElements,
   isEqual
-}
+};

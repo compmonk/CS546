@@ -14,7 +14,7 @@ try {
 try {
    // Should Fail
    const headTwo = arrayUtils.head(1234);
-   console.error('head did not error');
+   console.error('head did not error', headTwo);
 } catch (e) {
    console.log('head failed successfully', e);
 }
@@ -31,7 +31,7 @@ try {
 try {
    // Should Fail
    const lastTwo = arrayUtils.last(1234);
-   console.error('last did not error');
+   console.error('last did not error', lastTwo);
 } catch (e) {
    console.log('last failed successfully', e);
 }
@@ -40,7 +40,7 @@ try {
 try {
    // Should Pass
    const removeOne = arrayUtils.remove([2, 3, 4], 1);
-   console.log('remove passed successfully', removeOne);
+   console.log('remove([2, 3, 4], 1) passed successfully', removeOne);
 } catch (e) {
    console.error('remove failed test case', e);
 }
@@ -56,7 +56,7 @@ try {
 try {
    // Should Fail
    const removeThree = arrayUtils.remove();
-   console.error('remove did not error');
+   console.error('remove did not error', removeThree);
 } catch (e) {
    console.log('remove failed successfully', e);
 }
