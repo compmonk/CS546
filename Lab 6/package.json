@@ -1,0 +1,14 @@
+{
+  "name": "cs-546-lab-6",
+  "version": "1.0.0",
+  "description": "CS-546 Lab 6",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Zubair Shaikh 10444383",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
