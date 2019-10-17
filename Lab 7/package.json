@@ -1,0 +1,17 @@
+{
+  "name": "cs-546-lab-7",
+  "version": "1.0.0",
+  "description": "CS-546 Lab 7",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js & newman run Lab7.postman_collection.json"
+  },
+  "author": "Zubair Shaikh 10444383",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.3.2",
+    "newman": "^4.5.5"
+  }
+}

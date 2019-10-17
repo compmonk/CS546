@@ -1,0 +1,974 @@
+{
+	"info": {
+		"_postman_id": "460ae1d3-95bf-45f6-acc1-be3553f7b1eb",
+		"name": "Lab 7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "animals",
+			"item": [
+				{
+					"name": "Create animal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0377be4e-2a6d-4933-b904-ca29f7145be6",
+								"exec": [
+									"pm.globals.set(\"animalId\", pm.response.json()['_id']);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Panthera\",\n    \"animalType\": \"Tiger\",\n    \"likes\": [\"5da81b0df8404433a76df264\"]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/animals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"animals"
+							]
+						},
+						"description": "Creates an animal"
+					},
+					"response": [
+						{
+							"name": "Create animal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Duke\",\n    \"animalType\": \"Rhino\",\n        \"likes\": [\"5da6ace360b55b4646d1145e\"]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/animals",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"animals"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bc-/0pwZB4TFlRxNvlAG9KdjCCi6No\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Oct 2019 08:07:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"5da6cfd3528e635f70875acc\",\n    \"name\": \"Duke\",\n    \"animalType\": \"Rhino\",\n    \"likes\": [\n        {\n            \"_id\": \"5da6ace360b55b4646d1145e\",\n            \"title\": \"Don't ask me how the weather is up here, because idk\"\n        }\n    ],\n    \"posts\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Get animals",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "36596c14-9fb9-4ef7-b8a7-39f5016c5e10",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/animals/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"animals",
+								""
+							]
+						},
+						"description": "Gets list of all the animals"
+					},
+					"response": [
+						{
+							"name": "Get animals",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/animals/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"animals",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "876"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36c-ujdakafOuUM71+0jVaiQgNva+ps\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Oct 2019 08:08:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"5da6cd85f4d9575d5f8382a1\",\n        \"name\": \"Duke\",\n        \"animalType\": \"Rhino\",\n        \"likes\": [\n            {\n                \"_id\": \"5da6ace360b55b4646d1145e\",\n                \"title\": \"Don't ask me how the weather is up here, because idk\"\n            }\n        ],\n        \"posts\": []\n    },\n    {\n        \"_id\": \"5da6acf360b55b4646d1145f\",\n        \"name\": \"Duke\",\n        \"animalType\": \"Rhino\",\n        \"likes\": [\n            {\n                \"_id\": \"5da6aea460b55b4646d11461\",\n                \"title\": \"This is another post\"\n            },\n            {\n                \"_id\": \"5da6ad0f60b55b4646d11460\",\n                \"title\": \"Don't ask me how the weather is up here\"\n            },\n            {\n                \"_id\": \"5da6ace360b55b4646d1145e\",\n                \"title\": \"Don't ask me how the weather is up here, because idk\"\n            }\n        ],\n        \"posts\": [\n            {\n                \"_id\": \"5da6ad0f60b55b4646d11460\",\n                \"title\": \"Don't ask me how the weather is up here\"\n            },\n            {\n                \"_id\": \"5da6aea460b55b4646d11461\",\n                \"title\": \"This is another post\"\n            }\n        ]\n    },\n    {\n        \"_id\": \"5da6acd660b55b4646d1145d\",\n        \"name\": \"Mortimer\",\n        \"animalType\": \"Girraffe\",\n        \"likes\": [],\n        \"posts\": [\n            {\n                \"_id\": \"5da6ace360b55b4646d1145e\",\n                \"title\": \"Don't ask me how the weather is up here, because idk\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get animal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a366ed8a-fa65-4ad9-9787-0e17f80a3744",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/animals/{{animalId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"animals",
+								"{{animalId}}"
+							]
+						},
+						"description": "Gets an animal by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update animal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ecad2e0d-4c1e-4d3b-a977-b970b2dc97ef",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mortimer\",\n    \"animalType\": \"Noble Giraffe\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/animals/{{animalId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"animals",
+								"{{animalId}}"
+							]
+						},
+						"description": "Updates an animal by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete animal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "954ddc29-57ba-432f-bcc6-56e919a04a4b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/animals/{{animalId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"animals",
+								"{{animalId}}"
+							]
+						},
+						"description": "Deletes an animal by id"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "Create post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8c6c2425-3cef-4ed2-9d63-324256dab634",
+								"exec": [
+									"pm.globals.set(\"postId\", pm.response.json()['_id']);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"This is another\",\n    \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me\",\n    \"author\": \"5da81aedf8404433a76df262\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							]
+						},
+						"description": "Creates a post"
+					},
+					"response": [
+						{
+							"name": "Create post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"This is another post\",\n    \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me\",\n    \"author\": \"5da6acf360b55b4646d1145f\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "270"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10e-HGSNkBl6podqiWjxhIS0yAhhJCU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Oct 2019 08:22:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"5da6ace360b55b4646d1145e\",\n    \"title\": \"Don't ask me how the weather is up here, because idk\",\n    \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me. Yes you\",\n    \"author\": {\n        \"_id\": \"5da6acd660b55b4646d1145d\",\n        \"name\": \"Mortimer\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "85da62b3-9b82-445b-b374-1f6ff3db8be4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							]
+						},
+						"description": "Get all posts in a list"
+					},
+					"response": [
+						{
+							"name": "Get posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1421"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"58d-8xRO6acjzMXSSnSZnSt8Cv4tv4c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Oct 2019 08:22:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"5da6ace360b55b4646d1145e\",\n        \"title\": \"Don't ask me how the weather is up here, because idk\",\n        \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me. Yes you\",\n        \"author\": {\n            \"_id\": \"5da6acd660b55b4646d1145d\",\n            \"name\": \"Mortimer\"\n        }\n    },\n    {\n        \"_id\": \"5da6ad0f60b55b4646d11460\",\n        \"title\": \"Don't ask me how the weather is up here\",\n        \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me\",\n        \"author\": {\n            \"_id\": \"5da6acf360b55b4646d1145f\",\n            \"name\": \"Duke\"\n        }\n    },\n    {\n        \"_id\": \"5da6aea460b55b4646d11461\",\n        \"title\": \"This is another post\",\n        \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me\",\n        \"author\": {\n            \"_id\": \"5da6acf360b55b4646d1145f\",\n            \"name\": \"Duke\"\n        }\n    },\n    {\n        \"_id\": \"5da6d0c6528e635f70875acd\",\n        \"title\": \"This is another post\",\n        \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me\",\n        \"author\": {\n            \"_id\": \"5da6acf360b55b4646d1145f\",\n            \"name\": \"Duke\"\n        }\n    },\n    {\n        \"_id\": \"5da6d2ff8da9f561d4386132\",\n        \"title\": \"This is another post\",\n        \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me\",\n        \"author\": {\n            \"_id\": \"5da6acf360b55b4646d1145f\",\n            \"name\": \"Duke\"\n        }\n    },\n    {\n        \"_id\": \"5da6d32ea616d76206f025b9\",\n        \"title\": \"This is another post\",\n        \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me\",\n        \"author\": {\n            \"_id\": \"5da6acf360b55b4646d1145f\",\n            \"name\": \"Duke\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "30af66b4-e7ed-4d42-8c1a-6cfc28d87402",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/posts/{{postId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"{{postId}}"
+							]
+						},
+						"description": "Gets a post by id"
+					},
+					"response": [
+						{
+							"name": "Get post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/posts/5da6ace360b55b4646d1145e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"posts",
+										"5da6ace360b55b4646d1145e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "270"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10e-HGSNkBl6podqiWjxhIS0yAhhJCU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Oct 2019 08:22:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"5da6ace360b55b4646d1145e\",\n    \"title\": \"Don't ask me how the weather is up here, because idk\",\n    \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me. Yes you\",\n    \"author\": {\n        \"_id\": \"5da6acd660b55b4646d1145d\",\n        \"name\": \"Mortimer\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3ee9f558-f1de-4018-9370-91bb129c9e70",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me.\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/posts/{{postId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"{{postId}}"
+							]
+						},
+						"description": "Updates a post by id"
+					},
+					"response": [
+						{
+							"name": "Update post",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me.\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/posts/5da6ace360b55b4646d1145e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"posts",
+										"5da6ace360b55b4646d1145e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"106-VCyARrQu0cF5Rb0g8ZJsxjforbE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Oct 2019 08:23:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"5da6ace360b55b4646d1145e\",\n    \"title\": \"Don't ask me how the weather is up here, because idk\",\n    \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me.\",\n    \"author\": {\n        \"_id\": \"5da6acd660b55b4646d1145d\",\n        \"name\": \"Mortimer\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c02e4b78-309c-4f83-95f2-df81c8d70bf3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me. yes i'm talking to you\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/posts/{{postId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"{{postId}}"
+							]
+						},
+						"description": "Deletes a post by id"
+					},
+					"response": [
+						{
+							"name": "Delete post",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me. yes i'm talking to you\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/posts/5da6ace360b55b4646d1145e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"posts",
+										"5da6ace360b55b4646d1145e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11e-o7P62NAVRmcjGPlFgYDbCJL3F8Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Oct 2019 08:23:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"deleted\": true,\n    \"data\": {\n        \"_id\": \"5da6ace360b55b4646d1145e\",\n        \"title\": \"Don't ask me how the weather is up here, because idk\",\n        \"content\": \"It's only like a few feet higher than you. The weather isn't different. Stop harassing me.\",\n        \"author\": {\n            \"_id\": \"5da6acd660b55b4646d1145d\",\n            \"name\": \"Mortimer\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "likes",
+			"item": [
+				{
+					"name": "Like post",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7167275a-945c-4c9a-9e81-749953a7cd14",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b73af88e-6c81-4260-a876-7719b50ed4db",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/likes/5da81aedf8404433a76df262?postId=5da81b22f8404433a76df269",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"likes",
+								"5da81aedf8404433a76df262"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "5da81b22f8404433a76df269"
+								}
+							]
+						},
+						"description": "An animal likes a post"
+					},
+					"response": []
+				},
+				{
+					"name": "Unlike post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2914f6cf-396d-47c5-afd4-e4f24ec5953f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/likes/5da822c73dd83f3f3d60fc7c?postId=5da81b10f8404433a76df265",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"likes",
+								"5da822c73dd83f3f3d60fc7c"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "5da81b10f8404433a76df265"
+								}
+							]
+						},
+						"description": "An animal unlikes a post"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
