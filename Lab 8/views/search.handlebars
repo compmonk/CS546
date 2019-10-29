@@ -1,0 +1,16 @@
+<a class="get-home" href="/">Make Another Search</a>
+<main>
+    <h1>{{title}}</h1>
+    <h2>{{personName}}</h2>
+    {{#if peopleFound}}
+        <ul>
+            {{#each peopleFound}}
+                <li>
+                    <a class="person-item" href="/details/{{this.id}}">{{this.firstName}} {{this.lastName}}</a>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p class="not-found">We're sorry, but no results were found for {{personName}}.</p>
+    {{/if}}
+</main>
