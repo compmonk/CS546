@@ -1,0 +1,44 @@
+body {
+    background-color: darkgrey;
+}
+
+h1 {
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+}
+
+.is-prime {
+    color: #00E676;
+}
+
+.not-prime {
+    color: #FF3D00;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.error {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.form {
+    text-align: center;
+}
+
+.form-group {
+    display: inline-block
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; /* Footer height */
+    text-align: center;
+}

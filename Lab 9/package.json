@@ -1,0 +1,14 @@
+{
+  "name": "cs-546-lab-9",
+  "version": "1.0.0",
+  "description": "CS-546 Lab 9",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zubair Shaikh 10444383",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

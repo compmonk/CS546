@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Whole Prime Number Checker</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="public/main.js"></script>
+    <link rel="stylesheet" href="public/site.css">
+</head>
+<body>
+<h1>The Whole Prime Number Checker</h1>
+
+<h6>Check prime numbers between 1 to 1000</h6>
+
+<form id="input-form" method="post" class="form">
+    <div class="form-group">
+        <label for="number">Enter the Number </label>
+        <input id="number" type="number" name="number" min="1" max="1000">
+    </div>
+    <div class="form-group hidden" id="error-container">
+        <div class="error" id="error-text"></div>
+    </div>
+    <div class="form-group">
+        <input type="button" value="Check" onclick="checkPrime()"/>
+<!--        <button type="submit" class="btn btn-default">Check</button>-->
+    </div>
+    <div class="form-group hidden" id="result-container">
+        <div class="alert alert-success text-goes-here">
+        </div>
+    </div>
+</form>
+
+<ol id="attempts">
+
+</ol>
+</body>
+<footer>
+    Zubair Shaikh 10444383 Web Developer
+</footer>
+</html>
