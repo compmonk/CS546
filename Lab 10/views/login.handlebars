@@ -1,0 +1,17 @@
+<main>
+    <p>Login to know more about yourself.</p>
+    <form id="login-form" method="post" action="/login">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" placeholder="Username"/>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="Password"/>
+
+        <button id="login-button" type="submit">Login</button>
+    </form>
+
+    {{#if error}}
+        <h6>{{error}}</h6>
+    {{/if}}
+
+</main>
