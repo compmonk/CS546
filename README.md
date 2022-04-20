@@ -1,5 +1,7 @@
 # CS546
 
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=compmonk.CS546) [![GitHub forks](https://img.shields.io/github/forks/compmonk/CS546)](https://github.com/compmonk/CS546/network) [![GitHub stars](https://img.shields.io/github/stars/compmonk/CS546)](https://github.com/compmonk/CS546/stargazers)
+
 ## [Lab 01 : An Intro to Node](https://github.com/compmonk/CS546/tree/master/Lab%2001)
 ## [Lab 02](https://github.com/compmonk/CS546/tree/master/Lab%2002)
 ## [Lab 03](https://github.com/compmonk/CS546/tree/master/Lab%2003)
